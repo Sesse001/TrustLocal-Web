@@ -238,6 +238,112 @@
             line-height: 1.5;
         }
 
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .testimonial-stars {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #4B5563;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #E8F5E9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #2E7D32;
+        }
+
+        .testimonial-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1F2937;
+        }
+
+        .testimonial-role {
+            font-size: 13px;
+            color: #9CA3AF;
+            margin-top: 2px;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            background: #F9FAFB;
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1F2937;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            color: #2E7D32;
+        }
+
         /* ===== FOR WHO ===== */
         .who-section {
             padding: 80px 20px;
@@ -500,6 +606,103 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <h2 class="section-title">What People Say</h2>
+        <p class="section-subtitle">
+            Real stories from customers and providers using TrustLocal.
+        </p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "Found a plumber in 5 minutes and he was at my house the same afternoon. Amazing service!"
+                </p>
+                <div class="testimonial-avatar">T</div>
+                <p class="testimonial-name">Thandi M.</p>
+                <p class="testimonial-role">Customer - Johannesburg</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "TrustLocal helped me grow my cleaning business. I get 10+ new customers every month!"
+                </p>
+                <div class="testimonial-avatar">S</div>
+                <p class="testimonial-name">Sipho K.</p>
+                <p class="testimonial-role">Provider - Cape Town</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "The booking system is so easy. I love that I can see the price before I book. No surprises!"
+                </p>
+                <div class="testimonial-avatar">L</div>
+                <p class="testimonial-name">Lerato N.</p>
+                <p class="testimonial-role">Customer - Pretoria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+                Everything you need to know about TrustLocal.
+            </p>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    Is TrustLocal free to use?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! TrustLocal is completely free for customers. Providers can join and start offering services without any fees.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How do I become a provider?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Download the app, tap "I'm a Freelancer" during signup, fill in your business details, and our admin team will review your application within 24-48 hours.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How does booking work?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Browse providers, tap "Request Booking", select a date and time, add a job description, and your provider will confirm or reschedule.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    Is my payment secure?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Currently, payments are arranged directly between customer and provider after service completion. In-app secure payments are coming soon!
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    How are providers verified?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Every provider must submit ID verification and their application is manually reviewed by our admin team before approval.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOR WHO -->
     <section class="who-section">
         <h2 class="section-title">TrustLocal is for Everyone</h2>
@@ -560,6 +763,16 @@
     </footer>
 
     <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+            const icon = element.querySelector('.faq-icon');
+            if (element.classList.contains('active')) {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
+
         console.log('TrustLocal landing page loaded');
     </script>
 </body>
