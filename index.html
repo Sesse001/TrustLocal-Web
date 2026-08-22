@@ -102,6 +102,30 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
+        /* ===== QR CONTAINER ===== */
+        .qr-container {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .qr-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .qr-text {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Hide QR by default on mobile */
+        .qr-container.mobile-hidden {
+            display: none;
+        }
+
         /* ===== STATS BAR ===== */
         .stats-bar {
             background: #1B5E20;
@@ -495,9 +519,15 @@
                 <span class="hero-badge-text">500+ Verified Professionals in South Africa</span>
             </div>
             <br>
-            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.6/app-release.5.apk" class="hero-button">
+            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.6/app-release.5.apk" class="hero-button" id="downloadButton">
                 📱 Download TrustLocal Free
             </a>
+            
+            <!-- QR Code - shown on desktop, hidden on mobile -->
+            <div class="qr-container" id="heroQR">
+                <img src="qr-code.png" alt="Scan to download TrustLocal">
+                <p class="qr-text">Scan with your phone camera to download</p>
+            </div>
         </div>
     </section>
 
@@ -763,6 +793,20 @@
     </footer>
 
     <script>
+        // ===== SMART DEVICE DETECTION =====
+        function detectDevice() {
+            const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+            const heroQR = document.getElementById('heroQR');
+            
+            if (isMobile) {
+                // On mobile: hide QR, just show download button
+                if (heroQR) heroQR.style.display = 'none';
+            } else {
+                // On desktop: show QR prominently
+                if (heroQR) heroQR.style.display = 'block';
+            }
+        }
+        
         function toggleFAQ(element) {
             element.classList.toggle('active');
             const icon = element.querySelector('.faq-icon');
@@ -773,6 +817,8 @@
             }
         }
 
+        // Run on page load
+        detectDevice();
         console.log('TrustLocal landing page loaded');
     </script>
 </body>
