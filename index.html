@@ -121,11 +121,6 @@
             margin-top: 8px;
         }
 
-        /* Hide QR by default on mobile */
-        .qr-container.mobile-hidden {
-            display: none;
-        }
-
         /* ===== STATS BAR ===== */
         .stats-bar {
             background: #1B5E20;
@@ -519,7 +514,7 @@
                 <span class="hero-badge-text">500+ Verified Professionals in South Africa</span>
             </div>
             <br>
-            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.6/app-release.5.apk" class="hero-button" id="downloadButton">
+            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.7/app-release.6.apk" class="hero-button">
                 📱 Download TrustLocal Free
             </a>
             
@@ -772,7 +767,7 @@
             Download TrustLocal free and connect with trusted professionals today.
         </p>
         <div class="download-buttons">
-            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.6/app-release.5.apk" class="download-button">
+            <a href="https://github.com/Sesse001/TrustLocal/releases/download/v1.0.7/app-release.6.apk" class="download-button">
                 📱 Download for Android
             </a>
         </div>
@@ -799,10 +794,8 @@
             const heroQR = document.getElementById('heroQR');
             
             if (isMobile) {
-                // On mobile: hide QR, just show download button
                 if (heroQR) heroQR.style.display = 'none';
             } else {
-                // On desktop: show QR prominently
                 if (heroQR) heroQR.style.display = 'block';
             }
         }
@@ -817,7 +810,6 @@
             }
         }
 
-        // Run on page load
         detectDevice();
         console.log('TrustLocal landing page loaded');
     </script>
